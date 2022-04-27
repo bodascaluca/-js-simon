@@ -18,36 +18,17 @@
 
 // Crazione effetiva di 5 numeri Random diversi tra loro
 const ultimateRandomArray =randomArrayFunction();
-// console.log(ultimateRandomArray);
-//Visualizzare i 5 numeri in html per 30 secondi 
 
+//Visualizzare i 5 numeri in html
+
+    //Prelevo la classe 
     let visualNumbers = document.getElementById("numbers");
-    
-    visualNumbers = document.createElement("h4")
 
-    visualNumbers.innerHTML = `<span>${ultimateRandomArray}</span>`
-    
-    visualNumbers.classListy.add("adessova");
-    console.log(visualNumbers);
+    //Scrivo dentro la classe selezionarta
+    visualNumbers.innerHTML = `<h1>Ricordati questi numeri</h1><h4>${ultimateRandomArray}</h4>`;
 
-
-// //Visualizzare i 5 numeri in html per 30 secondi 
-// const visualEffectiveNumbers =setTimeout (visualFiveNumbers(ultimateRandomArray), 30 * 1000);
-
-
-// console.log(visualEffectiveNumbers);
-
-// function visualFiveNumbers(ultimateRandomArray){
-//     let visualNumbers = document.getElementById("numbers");
-    
-//     visualNumbers = document.createElement("h4");
-
-//     visualNumbers.innerHTML = `<span>${ultimateRandomArray}</span>`
-//     console.log(visualNumbers);
-//     return visualNumbers;
-     
-// }
-
+const writeArray = writeNumbersArray()
+   
 
 
 
@@ -63,11 +44,14 @@ function randomArrayFunction(){
     for (let i = 1; i <= 5; i++){
         
         //Visializzazione di un numero random
-        const randomNumber = seeTheNumber(1, 100);
+        const randomNumber = seeTheNumber(1, 10);
     
         //Controllo che siano tutti diversi e non ci sia una ripetizione
         if (!randomArray.includes(randomNumber)){
             randomArray.push(randomNumber);
+        } else {
+            i--;
+            console.log('numero già estratto ' + randomNumber);
         }
     }
     return randomArray;
