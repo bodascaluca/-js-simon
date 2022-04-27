@@ -25,15 +25,28 @@ let visualNumbers = document.getElementById("numbers");
 //Scrivo dentro la classe selezionarta
 visualNumbers.innerHTML = `<h1>Ricordati questi numeri</h1><h4>${ultimateRandomArray}</h4>`;
 
+//Faccio aspettare/chiedo i numeri e li registro
 setTimeout(theNumbers ,3000);
 
+
+
+
+
+
+//FAcciamo aspettare 3 secondi prima di chiedere i numeri
 function theNumbers(){
     
     const writeArray = writeNumbersArray();
     console.log(writeArray);
+    let numbersWin =[];
+    for( let i = 0; i < writeArray.length;i++){
+        let currentNumber = writeArray[i];
+        if(ultimateRandomArray.includes(currentNumber)){
+            numbersWin.push(currentNumber);
+        }
+    }
+    console.log(numbersWin);
 }
-
-
 
 //Chiediamo i numeri che doveva ricordare
 
