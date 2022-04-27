@@ -45,6 +45,8 @@ function theNumbers(){
             numbersWin.push(currentNumber);
         }
     }
+    const result = document.getElementById("result");
+    result.innerHTML = `I numeri sono ${numbersWin}`;
     console.log(numbersWin);
 }
 
