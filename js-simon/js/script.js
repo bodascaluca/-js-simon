@@ -18,17 +18,36 @@
 
 // Crazione effetiva di 5 numeri Random diversi tra loro
 const ultimateRandomArray =randomArrayFunction();
-
 //Visualizzare i 5 numeri in html
+//Prelevo la classe 
+let visualNumbers = document.getElementById("numbers");
 
-    //Prelevo la classe 
-    let visualNumbers = document.getElementById("numbers");
+//Scrivo dentro la classe selezionarta
+visualNumbers.innerHTML = `<h1>Ricordati questi numeri</h1><h4>${ultimateRandomArray}</h4>`;
 
-    //Scrivo dentro la classe selezionarta
-    visualNumbers.innerHTML = `<h1>Ricordati questi numeri</h1><h4>${ultimateRandomArray}</h4>`;
+setTimeout(theNumbers ,3000);
 
-const writeArray = writeNumbersArray()
-   
+function theNumbers(){
+    
+    const writeArray = writeNumbersArray();
+    console.log(writeArray);
+}
+
+
+
+//Chiediamo i numeri che doveva ricordare
+
+
+//Si chiede 5 volte di inserire un numero
+function writeNumbersArray(){
+    const takeTheNumbersArray = [];
+    for (let i = 0; i < 5; i++){
+        const takeNumbers = parseInt(prompt(`Via! Scrivi i 5 numeri.`));
+        takeTheNumbersArray.push(takeNumbers);
+        // console.log(takeTheNumbersArray);
+    }
+    return takeTheNumbersArray;
+}
 
 
 
@@ -44,7 +63,7 @@ function randomArrayFunction(){
     for (let i = 1; i <= 5; i++){
         
         //Visializzazione di un numero random
-        const randomNumber = seeTheNumber(1, 10);
+        const randomNumber = seeTheNumber(1, 100);
     
         //Controllo che siano tutti diversi e non ci sia una ripetizione
         if (!randomArray.includes(randomNumber)){
