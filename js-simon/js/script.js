@@ -16,8 +16,40 @@
 
 
 
+// Crazione effetiva di 5 numeri Random diversi tra loro
 const ultimateRandomArray =randomArrayFunction();
-console.log(ultimateRandomArray);
+// console.log(ultimateRandomArray);
+//Visualizzare i 5 numeri in html per 30 secondi 
+
+    let visualNumbers = document.getElementById("numbers");
+    
+    visualNumbers = document.createElement("h4")
+
+    visualNumbers.innerHTML = `<span>${ultimateRandomArray}</span>`
+    
+    visualNumbers.classListy.add("adessova");
+    console.log(visualNumbers);
+
+
+// //Visualizzare i 5 numeri in html per 30 secondi 
+// const visualEffectiveNumbers =setTimeout (visualFiveNumbers(ultimateRandomArray), 30 * 1000);
+
+
+// console.log(visualEffectiveNumbers);
+
+// function visualFiveNumbers(ultimateRandomArray){
+//     let visualNumbers = document.getElementById("numbers");
+    
+//     visualNumbers = document.createElement("h4");
+
+//     visualNumbers.innerHTML = `<span>${ultimateRandomArray}</span>`
+//     console.log(visualNumbers);
+//     return visualNumbers;
+     
+// }
+
+
+
 
 /**
  * Description Creazione di 5 numeri random 
